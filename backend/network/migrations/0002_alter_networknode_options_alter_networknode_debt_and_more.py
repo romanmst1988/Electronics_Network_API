@@ -7,22 +7,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('network', '0001_initial'),
+        ("network", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='networknode',
-            options={'verbose_name': 'Звено сети', 'verbose_name_plural': 'Звенья сети'},
+            name="networknode",
+            options={
+                "verbose_name": "Звено сети",
+                "verbose_name_plural": "Звенья сети",
+            },
         ),
         migrations.AlterField(
-            model_name='networknode',
-            name='debt',
-            field=models.DecimalField(decimal_places=2, default=0, max_digits=10, verbose_name='Задолженность перед поставщиком'),
+            model_name="networknode",
+            name="debt",
+            field=models.DecimalField(
+                decimal_places=2,
+                default=0,
+                max_digits=10,
+                verbose_name="Задолженность перед поставщиком",
+            ),
         ),
         migrations.AlterField(
-            model_name='networknode',
-            name='supplier',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='clients', to='network.networknode', verbose_name='Поставщик'),
+            model_name="networknode",
+            name="supplier",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="clients",
+                to="network.networknode",
+                verbose_name="Поставщик",
+            ),
         ),
     ]

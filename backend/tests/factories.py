@@ -1,6 +1,5 @@
 import factory
 from django.contrib.auth import get_user_model
-
 from network.models import NetworkNode
 from products.models import Product
 

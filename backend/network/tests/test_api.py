@@ -1,7 +1,5 @@
 import pytest
-
-from tests.factories import SupplierFactory, NetworkNodeFactory
-
+from tests.factories import NetworkNodeFactory, SupplierFactory
 
 pytestmark = pytest.mark.django_db
 
@@ -77,6 +75,7 @@ def test_supplier_can_be_null_on_create(auth_client):
 
     assert response.status_code == 201
     assert response.data["supplier"] is None
+
 
 def test_retrieve_network_node(auth_client):
     node = NetworkNodeFactory()

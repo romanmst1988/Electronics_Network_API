@@ -1,7 +1,5 @@
 import pytest
-
 from tests.factories import NetworkNodeFactory
-
 
 pytestmark = pytest.mark.django_db
 

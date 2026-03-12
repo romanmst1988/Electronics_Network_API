@@ -1,7 +1,5 @@
 import pytest
-
-from tests.factories import SupplierFactory, NetworkNodeFactory
-
+from tests.factories import NetworkNodeFactory, SupplierFactory
 
 pytestmark = pytest.mark.django_db
 

@@ -1,6 +1,5 @@
 import pytest
 from rest_framework.test import APIClient
-
 from tests.factories import UserFactory
 
 

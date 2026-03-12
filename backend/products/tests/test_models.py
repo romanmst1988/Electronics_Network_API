@@ -1,7 +1,5 @@
 import pytest
-
 from tests.factories import ProductFactory
-
 
 pytestmark = pytest.mark.django_db
 

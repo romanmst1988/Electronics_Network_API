@@ -21,3 +21,7 @@ class NetworkNodeSerializer(serializers.ModelSerializer):
             "level",
         )
         read_only_fields = ("created_at", "level")
+
+    def update(self, instance, validated_data):
+        validated_data.pop("debt", None)
+        return super().update(instance, validated_data)

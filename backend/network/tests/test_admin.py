@@ -1,10 +1,8 @@
 import pytest
 from django.contrib.admin.sites import AdminSite
-
 from network.admin import NetworkNodeAdmin, clear_debt
 from network.models import NetworkNode
 from tests.factories import NetworkNodeFactory
-
 
 pytestmark = pytest.mark.django_db
 

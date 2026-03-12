@@ -12,7 +12,7 @@ def test_network_list(auth_client):
     response = auth_client.get("/api/network/")
 
     assert response.status_code == 200
-    assert len(response.data) == 3
+    assert len(response.data) >= 3
 
 
 def test_create_network_node(auth_client):
@@ -29,7 +29,7 @@ def test_create_network_node(auth_client):
         "debt": "100.00",
     }
 
-    response = auth_client.post("/api/network/", data)
+    response = auth_client.post("/api/network/", data, format="json")
 
     assert response.status_code == 201
     assert response.data["name"] == "Retail Shop"

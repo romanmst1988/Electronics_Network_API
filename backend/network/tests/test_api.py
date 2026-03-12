@@ -71,7 +71,7 @@ def test_supplier_can_be_null_on_create(auth_client):
         "debt": "0.00",
     }
 
-    response = auth_client.post("/api/network/", data)
+    response = auth_client.post("/api/network/", data, format="json")
 
     assert response.status_code == 201
     assert response.data["supplier"] is None

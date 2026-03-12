@@ -1,9 +1,9 @@
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
+from users.permissions import IsActiveEmployee
 
 from .models import NetworkNode
 from .serializers import NetworkNodeSerializer
-from users.permissions import IsActiveEmployee
 
 
 class NetworkNodeViewSet(ModelViewSet):

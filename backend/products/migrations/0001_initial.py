@@ -9,18 +9,33 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('network', '0001_initial'),
+        ("network", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('model', models.CharField(max_length=255)),
-                ('release_date', models.DateField()),
-                ('network', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='products', to='network.networknode')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                ("model", models.CharField(max_length=255)),
+                ("release_date", models.DateField()),
+                (
+                    "network",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="products",
+                        to="network.networknode",
+                    ),
+                ),
             ],
         ),
     ]
